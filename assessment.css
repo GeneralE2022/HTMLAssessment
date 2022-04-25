@@ -3,7 +3,7 @@
  */
 
 .subjectHeader {
-  color: blue;
+  color: darkblue;
   font-family: sans-serif;
 }
 
@@ -11,24 +11,29 @@
 2. Your table should have bold/colored table headers, as well as a table border. Content should be centered in their respective blocks.
  */
 
+p {
+    font-size: 16px;
+}
 
 caption {
+  font-size: 16px;
   border-style: solid;
   border-width: 2px;
   border-color: grey;
   font-weight: bold;
-  color: green;
+  color: darkred;
 }
 
 th {
   font-weight: bold;
-  color: green;
+  color: darkred;
 }
 
 #scoreBoard {
   border-style: solid;
   border-width: 2px;
   border-color: grey;
+  border-radius: 10px;
   text-align: center;
   padding: 10px;
 }
@@ -47,8 +52,19 @@ ul {
 4. When the user hovers over a hyperlink the background color of the hyperlink should change and it should not be underlined.
  */
 
+a {
+  color: darkblue;
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: cursive;
+  text-decoration: none;
+}
+
  a:hover {
+  font-size: 18px;
   background-color: yellow;
+  font-weight: bolder;
+  font-family: cursive;
   text-decoration: none;
 }
 
@@ -67,21 +83,22 @@ blockquote {
 6. Make each team's image the background image for the list. Hint Check out the element > element and :first-child / :last-child selectors. Remove the image from above the team's list.
  */
 
- img[alt="Broncos Logo"] {
+img[alt="Broncos Logo"] {
  	display: none;
  	}
 
-  img[alt="Bears Logo"] {
+img[alt="Bears Logo"] {
    display: none;
    }
 
 
+ul > li:first-child > ul {
+  background: url("https://upload.wikimedia.org/wikipedia/en/4/44/Denver_Broncos_logo.svg") top left no-repeat;
+}
 
-
-
-
-        background: url("https://upload.wikimedia.org/wikipedia/en/4/44/Denver_Broncos_logo.svg") top left no-repeat;
-
+ul > li > ul {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/5/5c/Chicago_Bears_logo.svg") top left no-repeat;
+}
 
 
 /*
@@ -90,4 +107,29 @@ blockquote {
 
 #checkbox-grid {
   list-style: none
+}
+
+
+/*
+Stretch goals
+Have each team's primary quarterback display in bold.
+*/
+
+ul > li > ul > li:nth-child(2) {
+  font-weight: bolder;
+}
+
+
+/*
+Use CSS to give the table rows alternating background colors.
+*/
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+
+/*
+Solid background images can make foreground text hard to read; find a way to have each team's image display behind its roster, but reduced intensity. Do not edit the image itself.
+ */
+
+ img[alt*="Logo"] {
+   opacity: 0.1
 }
